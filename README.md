@@ -1,7 +1,7 @@
 # simpleTLD
 give thanks to Zdenek Kalal
 
-"   $./install.sh                      "
+"`   $./install.sh                      "
 "   import TLD                         "
 "   TLD = TLD.Tracker(1)
 "                                      "
@@ -12,4 +12,4 @@ give thanks to Zdenek Kalal
 "        time.sleep(0.1)               "
 "                                      "
 "   TLD.clearTracking()                " 
-"   TLD.close()                        "
+"   TLD.close()                        "`
