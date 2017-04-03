@@ -1,7 +1,7 @@
 # simpleTLD
 give thanks to Zdenek Kalal
-
-`   $./install.sh                      "
+```
+    $./install.sh                      "
 
 "   import TLD                         "
 
@@ -23,5 +23,6 @@ give thanks to Zdenek Kalal
 
 "   TLD.clearTracking()                " 
 
-"   TLD.close()                        "`
+"   TLD.close()                        
+```
 
