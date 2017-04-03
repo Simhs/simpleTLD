@@ -1,8 +1,8 @@
 # simpleTLD
 give thanks to Zdenek Kalal
 
-` $./install.sh`
-'import TLD
+` $./install.sh
+import TLD
 TLD = TLD.Tracker(1)
 print TLD.getData()
 TLD.tracking((100, 100, 200, 200))
@@ -12,4 +12,4 @@ while True:
     time.sleep(0.1)
 
 TLD.clearTracking()
-TLD.close()'
+TLD.close()`
