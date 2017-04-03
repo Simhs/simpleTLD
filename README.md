@@ -8,6 +8,7 @@ print TLD.getData()
 TLD.tracking((100, 100, 200, 200))
 
 while True:
+
     print TLD.getData()
     time.sleep(0.1)
 
