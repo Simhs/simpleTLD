@@ -53,16 +53,18 @@ tld.close()
 
 ## TLD 함수.
 ### Synopsis
-`opentld [option arguments] [arguments]`
 
-* `tld = TLD(mode)` param mode = 0 or 1
+* `tld = TLD(mode)` 
+param mode = 0 or 1
 설명: mode = 0 -> without GUI  
      mode = 1 can see GUI for debug  
      
-* `tld.getData()` return (x1,y1,x2,y2)  
+* `tld.getData()` 
+return (x1,y1,x2,y2)  
 설명: 추적되는 영역의 좌표를 반환(좌상,우하). 실패시 return(0,0,0,0)
 
-* `tld.tracking(area)` param area=(x,y,w,h) 
+* `tld.tracking(area)` 
+param area=(x,y,w,h) 
 설명: 추적할 영상의 영역(x,y,w,h)(좌상좌표2개 가로 세로)을 지정할 수 있다.
 
 * `tld.clearTracking()`
@@ -76,12 +78,17 @@ tld.close()
 
 ## SWAP 영역 할당
 `$ sudo dd if=/dev/zero of=/home/swapfile bs=1024 count=1000000`
+
 (한번에 1024바이트씩 1000000번 (1GB) /home/swapfile을 쓴다음 /dev/zero에 마운트 한다는뜻)
 
+
 `$ sudo mkswap /home/swapfile`
+
 (swapfile을 swap영역으로 포맷)
 
+
 `$ sudo swapon /home/swapfile`
+
 (swapfile을 swap으로서 활성화)
 
 ## 기본 업뎃
