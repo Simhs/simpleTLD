@@ -130,3 +130,5 @@ $ git clone https://github.com/Simhs/simpleTLD.git
 $ cd simpleTLD
 $ sudo chmod +x install.sh
 $ sudo ./install.sh
+
+`http://stackoverflow.com/questions/16287488/runtime-opencv-highgui-error-highgui-error-v4l-v4l2-vidioc-s-crop-opencv-c`
