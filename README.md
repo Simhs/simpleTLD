@@ -115,21 +115,9 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_
 $ make
 ```
 ### make timing
-make -j1
-003 min -> 6%
+* `make -j1` 3 min -> 6%   6 min -> 9% 
 
-006 min -> 9% 
-
-015 min -> 13% 
-
-make -j4
-002 min -> 5%
-
-010 min -> 5%
-
-002 min -> 5%
-
-
+* `make -j4` 3 min -> 18%   6 min -> 28% 
 
 ```
 $ sudo make install
