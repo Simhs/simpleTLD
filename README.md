@@ -105,6 +105,7 @@ $ sudo rpi-update
 `$ sudo apt-get install libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libdc1394-22-dev`
 
 ## Opencv2.4.10 이하 설치.
+https://defendtheplanet.net/2014/05/04/howto-opencv-2-4-9-on-raspberry-pi-from-source/
 ```
 $ cd
 $ wget https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.10/opencv-2.4.10.zip
