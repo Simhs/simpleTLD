@@ -115,9 +115,13 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_
 $ make
 ```
   3 min -> 6%
+  
   6 min -> 9%
+  
   9 min -> 12%
+  
 120 min -> 100%
+
 
 ```
 $ sudo make install
