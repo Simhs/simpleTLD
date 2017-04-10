@@ -2,29 +2,29 @@
 
 파이썬에서 TLD코드를 사용하고자 openTLD 코드를 수정하여 `simpleTLD` 를 만들었다.
 
-# Install 
+# PC Install 
 ```
-sudo apt-get update
-sudo apt-get upgrade
+$ sudo apt-get update
+$ sudo apt-get upgrade
 ```
 ## Opencv2.4.10 이하 설치.
 ```
-cd
-wget https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.10/opencv-2.4.10.zip
-unzip opencv-2.4.10.zip
-cd opencv-2.4.10
-mkdir build && cd build
-cmake ..
-make -j8
-sudo make install
+$ cd
+$ wget https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.10/opencv-2.4.10.zip
+$ unzip opencv-2.4.10.zip
+$ cd opencv-2.4.10
+$ mkdir build && cd build
+$ cmake ..
+$ make -j8
+$ sudo make install
 ```
 ## simpleTLD 설치.
 ```
-cd 
-git clone https://github.com/Simhs/simpleTLD.git
-cd simpleTLD
-sudo chmod +x install.sh
-sudo ./install.sh
+$ cd 
+$ git clone https://github.com/Simhs/simpleTLD.git
+$ cd simpleTLD
+$ sudo chmod +x install.sh
+$ sudo ./install.sh
 ```
 
 # Usage
@@ -71,97 +71,33 @@ sudo ./install.sh
 설명: 객체 제거
 
 
+# Raspberry Pi 3 Install
 
-
-### option arguments
-* `[-a <startFrameNumber>]` video starts at the frameNumber _startFrameNumber_
-* `[-b <x,y,w,h>]` Initial bounding box
-* `[-d <device>]` select input device: _device_=(IMGS|CAM|VID|STREAM)  
-	_IMGS_: capture from images  
-	_CAM_: capture from connected camera  
-	_VID_: capture from a video  
-	_STREAM_: capture from RTSP stream
-* `[-e <path>]` export model after run to _path_
-* `[-f]` shows foreground
-* `[-i <path>]` _path_ to the images or to the video.
-* `[-j <number>]` show trajectory for the last _number_ frames
-* `[-h]` shows help
-* `[-m <path>]` if specified load a model from _path_. An initialBoundingBox must be specified or selectManually must be true.
-* `[-n <number>]` Specifies the video device to use (defaults to 0). Useful to select a different camera when multiple cameras are connected.
-* `[-p path]` prints results into the file _path_
-* `[-s]` if set, user can select initial bounding box
-* `[-t <theta>]` threshold for determining positive results
-* `[-z <lastFrameNumber>]` video ends at the frameNumber _lastFrameNumber_.
-	If _lastFrameNumber_ is 0 or the option argument isn't specified means
-	all frames are taken.
-
-### Arguments
-`[CONFIG_FILE]` path to config file
-
-## Config file
-Look into the [sample-config-file](https://github.com/gnebehay/OpenTLD/blob/master/res/conf/config-sample.cfg) for more information.
-
-# Building
-## Dependencies
-* OpenCV
-* CMake
-* libconfig++ (optional)
-* Qt4 (optional)
-
-## Compiling
-### CMake
-OpenTLD uses CMake to create native build environments such as make, Eclipse, Microsoft Visual Studio.
-If you need help look at [Running CMake](http://www.cmake.org/cmake/help/runningcmake.html).
-
-You can use `cmake-gui`, if you need a graphical user interface.
-
-Use CMake to build the project. You can use "cmake-gui", if you need a graphical user interface.
-
-__Gui__  
-* Specify the source path (root path of the dictionary) and the binary path (where to build the program, out
-	  of source build recommended)
-* Configure
-* Select compiler
-* Adjust the options (if needed)
-* Configure
-* Generate
-
-__Command line__  
-If you have uncompressed the source in $OPENTLD, type in a console:
-```bash
-cd $OPENTLD
-mkdir ../build
-cd ../build
-cmake ../$OPENTLD -DBUILD_QOPENTLD=ON -DUSE_SYSTEM_LIBS=OFF
+## SWAP 영역 할당
+`$ sudo dd if=/dev/zero of=/home/swapfile bs=1024 count=1000000`
+(한번에 1024바이트씩 1000000번 (1GB) /home/swapfile을 쓴다음 /dev/zero에 마운트 한다는뜻)
+`$ sudo mkswap /home/swapfile`
+(swapfile을 swap영역으로 포맷)
+`$ sudo swapon /home/swapfile`
+(swapfile을 swap으로서 활성화)
+## 기본 업뎃
 ```
-
-__CMake options__  
-* `BUILD_QOPENTLD` build the graphical configuration dialog (requieres Qt)
-* `USE_SYSTEM_LIBS` don't use the included cvblob version but the installed version (requieres cvblob)
-
-### Windows (Microsoft Visual Studio)
-Navigate to the binary directory and build the solutions you want (You have to compile in RELEASE mode):
-* `opentld` build the project
-* `INSTALL` install the project
-
-_Note_: `vcomp.lib` is necessary when you try to compile it with OpenMP support and the
-Express versions of MSVC. This file is included in the Windows Server SDK.
-
-### Linux (make)
-Navigate with the terminal to the build directory
-* `make` build the project
-* `make install` build and install the project
-
-### Mac
-* `brew install python`
-* `brew install gfortran`
-* `easy_install numpy`
-* `brew install cmake`
-* `brew install opencv`
-* `cmake` build the project
-
-# Debian package
-* Navigate with the terminal into the root dictionary of OpenTLD (OpenTLD/)
-* Type `debuild -us -uc`
-* Delete the temporary files in the source tree with `debuild clean`
-
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo rpi-update
+```
+## 개발 툴
+`$ sudo apt-get install build-essential git cmake pkg-config`
+`$ sudo apt-get install libgtk2.0-dev libavcodec-dev  libavformat-dev libswscale-dev`
+`$ sudo apt-get install libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libdc1394-22-dev`
+## Opencv2.4.10 이하 설치.
+```
+$ cd
+$ wget https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.10/opencv-2.4.10.zip
+$ unzip opencv-2.4.10.zip
+$ cd opencv-2.4.10
+$ mkdir build && cd build
+$ cmake ..
+$ make -j4
+$ sudo make install
+```
