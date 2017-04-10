@@ -116,11 +116,17 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_
 $ make
 ```
 ### make timing
-* `make -j1` 3 min -> 6%   6 min -> 9% 
+* `make -j1` 5 ~ 9시간 
 
-* `make -j4` 3 min -> 18%   6 min -> 28% 
-
+* `make -j4` 1시간 미만 
 ```
 $ sudo make install
 $ sudo ldconfig
 ```
+## simpleTLD 설치.
+```
+$ cd 
+$ git clone https://github.com/Simhs/simpleTLD.git
+$ cd simpleTLD
+$ sudo chmod +x install.sh
+$ sudo ./install.sh
