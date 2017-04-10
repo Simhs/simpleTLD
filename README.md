@@ -1,26 +1,36 @@
 # Introduction
 
-This is a C++ implementation of OpenTLD that was originally published in MATLAB by Zdenek Kalal. OpenTLD is used for tracking objects in video streams. What makes this algorithm outstanding is that it does not make use of any training data. This implementation is based solely on open source libraries, meaning that you do not need any commercial products to compile or run it.
+파이썬에서 TLD코드를 사용하고자 openTLD 코드를 수정하여 `simpleTLD` 를 만들었다.
 
-The easiest way to get started is to download the precompiled [binaries](https://github.com/gnebehay/OpenTLD/releases) that are available for Windows and Ubuntu 12.04.  
-There is also a [PPA](https://launchpad.net/~opentld/+archive/ppa) available for Ubuntu 12.04. You just have to execute these commands:
+# Install 
 ```
-sudo add-apt-repository ppa:opentld/ppa
 sudo apt-get update
-sudo apt-get install opentld
+sudo apt-get upgrade
 ```
-
-If you have a webcam attached to your PC, you can simply execute opentld (on Linux) or opentld.exe (on Windows) in order to
-try it out. You can use the graphical configuration dialog as well, you just have to execite qopentld (on Linux) or qopentld.exe
-(on Windows).  
-For other configuration options, please see below.
-
-A documentation of the internals as well as other possibly helpful information is contained in this [master thesis](https://github.com/downloads/gnebehay/OpenTLD/gnebehay_thesis_msc.pdf).
+## Opencv2.4.10 이하 설치.
+```
+cd
+wget https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.10/opencv-2.4.10.zip
+unzip opencv-2.4.10.zip
+cd opencv-2.4.10
+mkdir build && cd build
+cmake ..
+make -j8
+sudo make install
+```
+## simpleTLD 설치.
+```
+cd 
+git clone https://github.com/Simhs/simpleTLD.git
+cd simpleTLD
+sudo chmod +x install.sh
+sudo ./install.sh
+```
 
 # Usage
-## Keyboard shortcuts
+## 객체 생성 방법 
 
-* `q` quit
+
 * `b` remember current frame as background model / clear background
 * `c` clear model and stop tracking  git
 * `l` toggle learning
@@ -29,9 +39,14 @@ A documentation of the internals as well as other possibly helpful information i
 * `i` import model from file specified in configuration parameter "modelPath"
 * `r` clear model, let user reinit tracking
 
-## Command line options
+## TLD 함수.
 ### Synopsis
 `opentld [option arguments] [arguments]`
+* `getData()` return (x1,y1,x2,y2)  설명: 추적되는 영역의 좌표를 반환(좌상,우하). 실패시 return(0,0,0,0)
+
+* `getData()` return (x1,y1,x2,y2)  설명: 추적되는 영역의 좌표를 반환(좌상,우하). 실패시 return(0,0,0,0)
+
+* `getData()` return (x1,y1,x2,y2)  설명: 추적되는 영역의 좌표를 반환(좌상,우하). 실패시 return(0,0,0,0)
 
 ### option arguments
 * `[-a <startFrameNumber>]` video starts at the frameNumber _startFrameNumber_
