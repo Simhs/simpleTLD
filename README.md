@@ -2,7 +2,7 @@
 
 파이썬에서 TLD코드를 사용하고자 openTLD 코드를 수정하여 `simpleTLD` 를 만들었다.
 
-# PC Install 
+# LINUX Install 
 ```
 $ sudo apt-get update
 $ sudo apt-get upgrade
