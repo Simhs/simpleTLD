@@ -114,15 +114,21 @@ $ mkdir build && cd build
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_NEW_PYTHON_SUPPORT=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON  -D BUILD_EXAMPLES=ON ..
 $ make
 ```
-###make timing
-
+### make timing
+make -j1
 003 min -> 6%
 
 006 min -> 9% 
 
 015 min -> 13% 
 
-120 min -> 100%
+make -j4
+002 min -> 5%
+
+010 min -> 5%
+
+002 min -> 5%
+
 
 
 ```
