@@ -29,24 +29,49 @@ sudo ./install.sh
 
 # Usage
 ## 객체 생성 방법 
-
-
-* `b` remember current frame as background model / clear background
-* `c` clear model and stop tracking  git
-* `l` toggle learning
-* `a` toggle alternating mode (if true, detector is switched off when tracker is available)
-* `e` export model to file specified in configuration parameter "modelExportFile"
-* `i` import model from file specified in configuration parameter "modelPath"
-* `r` clear model, let user reinit tracking
+```
+    tld = TLD(1)
+    time.sleep(1)
+    print tld.getData()
+    
+    tld.tracking((100,100,200,200))
+    time.sleep(1)
+    print tld.getData()
+    time.sleep(1)
+    print tld.getData()
+    time.sleep(1)
+    print tld.getData()
+    time.sleep(1)
+    print tld.getData()
+    
+    tld.clearTracking()
+    print tld.getData()
+    
+    tld.close()
+```
 
 ## TLD 함수.
 ### Synopsis
 `opentld [option arguments] [arguments]`
-* `getData()` return (x1,y1,x2,y2)  설명: 추적되는 영역의 좌표를 반환(좌상,우하). 실패시 return(0,0,0,0)
 
-* `getData()` return (x1,y1,x2,y2)  설명: 추적되는 영역의 좌표를 반환(좌상,우하). 실패시 return(0,0,0,0)
+* `tld = TLD(mode)` param mode = 0 or 1
+설명: mode = 0 -> without GUI  
+     mode = 1 can see GUI for debug  
+     
+* `tld.getData()` return (x1,y1,x2,y2)  
+설명: 추적되는 영역의 좌표를 반환(좌상,우하). 실패시 return(0,0,0,0)
 
-* `getData()` return (x1,y1,x2,y2)  설명: 추적되는 영역의 좌표를 반환(좌상,우하). 실패시 return(0,0,0,0)
+* `tld.tracking(area)` param area=(x,y,w,h) 
+설명: 추적할 영상의 영역(x,y,w,h)(좌상좌표2개 가로 세로)을 지정할 수 있다.
+
+* `tld.clearTracking()`
+설명: 트레킹 영역 제거
+
+* `tld.close()`
+설명: 객체 제거
+
+
+
 
 ### option arguments
 * `[-a <startFrameNumber>]` video starts at the frameNumber _startFrameNumber_
