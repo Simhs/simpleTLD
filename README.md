@@ -30,24 +30,25 @@ $ sudo ./install.sh
 # Usage
 ## 객체 생성 방법 
 ```
-    tld = TLD(1)
-    time.sleep(1)
-    print tld.getData()
-    
-    tld.tracking((100,100,200,200))
-    time.sleep(1)
-    print tld.getData()
-    time.sleep(1)
-    print tld.getData()
-    time.sleep(1)
-    print tld.getData()
-    time.sleep(1)
-    print tld.getData()
-    
-    tld.clearTracking()
-    print tld.getData()
-    
-    tld.close()
+import TLD
+tld = TLD(1)
+time.sleep(1)
+print tld.getData()
+
+tld.tracking((100,100,200,200))
+time.sleep(1)
+print tld.getData()
+time.sleep(1)
+print tld.getData()
+time.sleep(1)
+print tld.getData()
+time.sleep(1)
+print tld.getData()
+
+tld.clearTracking()
+print tld.getData()
+
+tld.close()
 ```
 
 ## TLD 함수.
